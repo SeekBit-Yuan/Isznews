@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">爱深圳</string>
+    <string name="app_logo">网聚深圳自媒体力量</string>
+    <string name="news">新闻</string>
+    <string name="video">视频</string>
+    <string name="user">我</string>
+</resources>
