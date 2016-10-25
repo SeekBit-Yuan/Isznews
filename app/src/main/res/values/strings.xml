@@ -4,4 +4,14 @@
     <string name="news">新闻</string>
     <string name="video">视频</string>
     <string name="user">我</string>
+    <string name="category_headline">头条</string>
+    <string name="category_shenzhen">深圳</string>
+    <string name="category_nanshan">南山</string>
+    <string name="category_futian">福田</string>
+    <string name="category_play">娱乐</string>
+    <string name="category_sport">体育</string>
+    <string name="category_art">艺术</string>
+    <string name="category_finance">金融</string>
+    <string name="category_trurism">旅游</string>
+
 </resources>
