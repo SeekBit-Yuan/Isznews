@@ -1,15 +1,22 @@
 package com.sznews.www.isznews;
 
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
@@ -30,6 +37,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private Fragment videoFragment;
     private Fragment userFragment;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +49,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         initEvent();
         // 初始化并设置当前Fragment
         initFragment(0);
+
     }
 
     private void initFragment(int index) {
@@ -107,8 +116,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         tv_news = (TextView) findViewById(R.id.text_news);
         tv_video = (TextView) findViewById(R.id.text_video);
         tv_user = (TextView) findViewById(R.id.text_user);
-
-    }
+}
 
     private void initEvent() {
         news.setOnClickListener(this);
@@ -119,7 +127,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        //在每次点击后将所有的底部按钮(ImageView,TextView)颜色改为灰色，然后根据点击着色
+        //在每次点击后将所有的底部按钮(ImageView,TextView)颜色改为绿色，然后根据点击着色
         restartBotton();
         // ImageView和TetxView置为绿色，页面随之跳转
         switch (v.getId()) {
@@ -127,6 +135,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 iv_news.setImageResource(R.mipmap.ic_news1);
                 tv_news.setTextColor(ContextCompat.getColor(this, R.color.theme));
                 initFragment(0);
+                System.out.println("view1");
                 break;
             case R.id.tool_bar2_video:
                 iv_video.setImageResource(R.mipmap.ic_movie1);
@@ -153,4 +162,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         tv_video.setTextColor(ContextCompat.getColor(this, R.color.text0));
         tv_user.setTextColor(ContextCompat.getColor(this, R.color.text0));
     }
+
+
 }
