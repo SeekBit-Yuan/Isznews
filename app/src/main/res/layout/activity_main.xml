@@ -16,34 +16,52 @@
         android:layout_weight="1">
     </FrameLayout>
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="40dp"-->
-        <!--android:background="@color/background1"-->
-        <!--android:gravity="center_vertical"-->
-        <!--android:orientation="horizontal">-->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background2"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
 
-        <!--<android.support.design.widget.TabLayout-->
-            <!--android:id="@+id/tablayout"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--app:tabIndicatorColor="@android:color/transparent"-->
-            <!--app:tabMode="scrollable"> //设置可以滚动-->
-        <!--</android.support.design.widget.TabLayout>-->
+        <RadioButton
+            android:id="@+id/radio_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/tab_menu_top"
+            android:layout_weight="1.03"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_selector_news"
+            android:gravity="center_horizontal"
+            android:textColor="@drawable/tab_selector_tv_color"
+            android:text="@string/news" />
 
-        <!--<ImageView-->
-            <!--android:layout_width="30dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:src="@mipmap/ic_add"/>-->
-    <!--</LinearLayout>-->
+        <RadioButton
+            android:id="@+id/radio_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/tab_menu_top"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_selector_video"
+            android:gravity="center_horizontal"
+            android:textColor="@drawable/tab_selector_tv_color"
+            android:text="@string/video" />
 
-    <!--<android.support.v4.view.ViewPager-->
-        <!--android:id="@+id/viewPager"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="1"></android.support.v4.view.ViewPager>-->
+        <RadioButton
+            android:id="@+id/radio_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/tab_menu_top"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_selector_user"
+            android:gravity="center_horizontal"
+            android:textColor="@drawable/tab_selector_tv_color"
+            android:text="@string/user" />
+    </RadioGroup>
 
-    <include layout="@layout/tool_bar2" />
+    <!--<include layout="@layout/tool_bar2"></include>-->
 
 </LinearLayout>

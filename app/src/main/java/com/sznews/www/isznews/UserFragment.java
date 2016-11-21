@@ -17,7 +17,7 @@ public class UserFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Toast.makeText(getActivity(),"onCreate",Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(),"onCreate",Toast.LENGTH_SHORT).show();
     }
 
     @Override

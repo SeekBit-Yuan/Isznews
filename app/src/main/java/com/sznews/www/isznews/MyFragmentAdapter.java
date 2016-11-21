@@ -16,11 +16,11 @@ public class MyFragmentAdapter extends FragmentPagerAdapter{
     private Context context;
     private List<Fragment> fragments;
 
-    public MyFragmentAdapter(List<Fragment> fragments, String[] titles, FragmentManager fm,Context context) {
+    public MyFragmentAdapter(List<Fragment> fragments, String[] titles, FragmentManager fm) {
         super(fm);
-        this.context = context;
         this.fragments = fragments;
         this.titles = titles;
+        this.context = context;
     }
 
     @Override
