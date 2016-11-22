@@ -17,6 +17,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sznews.www.isznews.fragment.NewsFragment;
+import com.sznews.www.isznews.fragment.UserFragment;
+import com.sznews.www.isznews.fragment.VideoFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 

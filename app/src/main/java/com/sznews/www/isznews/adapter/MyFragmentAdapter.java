@@ -1,4 +1,4 @@
-package com.sznews.www.isznews;
+package com.sznews.www.isznews.adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -20,7 +20,6 @@ public class MyFragmentAdapter extends FragmentPagerAdapter{
         super(fm);
         this.fragments = fragments;
         this.titles = titles;
-        this.context = context;
     }
 
     @Override

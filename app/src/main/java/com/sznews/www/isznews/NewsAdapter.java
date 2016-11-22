@@ -1,6 +1,5 @@
 package com.sznews.www.isznews;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,9 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.sznews.www.isznews.model.News;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by sznews on 2016/11/21.
@@ -20,28 +19,25 @@ import java.util.ArrayList;
 
 public class NewsAdapter extends BaseAdapter{
     private Context context;
+    private List<News> newsList;
 
-    public NewsAdapter(Context context){
+
+    public NewsAdapter(Context context, List<News> newsList){
         this.context = context;
+        this.newsList = newsList;
     }
 
-//    ArrayList<NewsEntity> newsList;
-//    Activity activity;
-//    LayoutInflater inflater = null;
 
     //控制该adapter包含列表项的个数
     @Override
     public int getCount() {
-        return 0;
+         return newsList.size();
     }
 
     //决定第position处的列表项内容
     @Override
     public Object getItem(int position) {
-//        if (newsList != null && newsList.size() != 0) {
-//            return newsList.get(position);
-//        }
-        return null;
+        return newsList.get(position);
     }
 
     //决定第position处的列表项ID
@@ -60,6 +56,11 @@ public class NewsAdapter extends BaseAdapter{
         TextView tvDesc = (TextView) convertView.findViewById(R.id.tvDesc);
         TextView tvTime = (TextView) convertView.findViewById(R.id.tvTime);
         ImageView ivPic = (ImageView) convertView.findViewById(R.id.ivPic);
+
+        News news = newsList.get(position);
+        tvTitle.setText(news.getTitle());
+        tvDesc.setText(news.getDesc());
+        tvTime.setText(news.getTime());
 
         return convertView;
     }

@@ -1,4 +1,4 @@
-package com.sznews.www.isznews;
+package com.sznews.www.isznews.bean;
 
 import java.io.Serializable;
 import java.util.List;

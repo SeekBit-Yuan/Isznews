@@ -1,4 +1,4 @@
-package com.sznews.www.isznews;
+package com.sznews.www.isznews.bean;
 
 /**
  * Created by sznews on 2016/11/21.
