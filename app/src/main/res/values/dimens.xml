@@ -9,4 +9,22 @@
     <dimen name="category_tab_text">15.0sp</dimen>
 
     <dimen name="tab_menu_top">4dp</dimen>
+
+    <dimen name="user_login_size">24dp</dimen>
+    <dimen name="user_login_top">16dp</dimen>
+    <dimen name="user_login_button">4dp</dimen>
+    <dimen name="user_login_margin">30dp</dimen>
+    <dimen name="user_radiobuttom_margin">1dp</dimen>
+    <dimen name="user_mycomment_margin">6dp</dimen>
+    <dimen name="user_feedback_margin">2dp</dimen>
+    <dimen name="user_blank_margin">1dp</dimen>
+    <dimen name="user_mycollection_size">16dp</dimen>
+    <dimen name="user_feedback_size">16dp</dimen>
+
+    <dimen name="login_login_size">24dp</dimen>
+    <dimen name="login_button">12dp</dimen>
+    <dimen name="login_button_login">12dp</dimen>
+    <dimen name="login_forgetpassword_size">10dp</dimen>
+    <dimen name="login_forgetpassword">16dp</dimen>
+
 </resources>

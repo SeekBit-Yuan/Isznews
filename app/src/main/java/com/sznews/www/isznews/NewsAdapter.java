@@ -49,19 +49,22 @@ public class NewsAdapter extends BaseAdapter{
     //决定第position处的列表项组件
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(convertView == null){
-           convertView = LayoutInflater.from(context).inflate(R.layout.news_item,null);
-        }
-        TextView tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
-        TextView tvDesc = (TextView) convertView.findViewById(R.id.tvDesc);
-        TextView tvTime = (TextView) convertView.findViewById(R.id.tvTime);
-        ImageView ivPic = (ImageView) convertView.findViewById(R.id.ivPic);
+//        if(convertView == null){
+            LayoutInflater inflater = LayoutInflater.from(context);
+            View view = inflater.inflate(R.layout.news_item,null);
+//           convertView = LayoutInflater.from(context).inflate(R.layout.news_item,null);
+//        }
+
+        TextView tvTitle = (TextView) view.findViewById(R.id.tvTitle);
+        TextView tvDesc = (TextView) view.findViewById(R.id.tvDesc);
+        TextView tvTime = (TextView) view.findViewById(R.id.tvTime);
+        ImageView ivPic = (ImageView) view.findViewById(R.id.ivPic);
 
         News news = newsList.get(position);
         tvTitle.setText(news.getTitle());
         tvDesc.setText(news.getDesc());
         tvTime.setText(news.getTime());
 
-        return convertView;
+        return view;
     }
 }

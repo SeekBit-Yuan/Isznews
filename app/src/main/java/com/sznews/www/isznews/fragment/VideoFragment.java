@@ -2,19 +2,47 @@ package com.sznews.www.isznews.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sznews.www.isznews.CategoryTabStrip;
 import com.sznews.www.isznews.R;
+import com.sznews.www.isznews.adapter.MyFragmentAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Yuan on 2016/10/25.
  */
 public class VideoFragment extends Fragment {
+
+    private String[] titles = new String[]{"推荐","自媒体"};
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.video, container, false);
+        View view = inflater.inflate(R.layout.video, container, false);
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        ViewPager viewPager = (ViewPager) getActivity().findViewById(R.id.viewPager);
+        List<Fragment> fragmentList = new ArrayList<Fragment>();
+        for(int i=0;i<titles.length;i++){
+            fragmentList.add(CategoryTabStrip.newInstance(titles[i]));
+        }
+
+        FragmentPagerAdapter adapter = new MyFragmentAdapter(fragmentList,titles,getChildFragmentManager());
+        viewPager.setAdapter(adapter);
+        TabLayout tabLayout = (TabLayout) getActivity().findViewById(R.id.tablayout);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }

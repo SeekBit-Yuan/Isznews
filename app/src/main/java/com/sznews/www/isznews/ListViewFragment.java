@@ -8,9 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.sznews.www.isznews.model.News;
 import com.sznews.www.isznews.utils.HttpUtils;
@@ -27,12 +25,13 @@ import java.util.List;
 
 public class ListViewFragment extends Fragment{
 
+    private View view;
+
     private ListView lvNews;
     private NewsAdapter newsAdapter;
-    private Context context;
     private List<News> newsList = new ArrayList<News>();
 
-    public static final String GET_NEWS_URL = "http://172.16.138.247/NewsDemo/getNewsJSON.php";
+    public static final String GET_NEWS_URL = "http://172.30.66.60/NewsDemo/getNewsJSON.php";
 
     private Handler getNewsHander = new Handler(){
         public void handleMessage(android.os.Message msg){
@@ -43,11 +42,10 @@ public class ListViewFragment extends Fragment{
                 for(int i=0;i<jsonArray.length();i++){
                     JSONObject object = jsonArray.getJSONObject(i);
                     String title = object.getString("title");
-                    String desc = object.getString("desc");
                     String time = object.getString("time");
                     String content_url = object.getString("content_url");
                     String pic_url = object.getString("pic_url");
-                    newsList.add(new News(title,desc,time,content_url,pic_url));
+                    newsList.add(new News(title,time,content_url,pic_url));
                 }
                 newsAdapter.notifyDataSetChanged();
             } catch (Exception e) {
@@ -59,20 +57,40 @@ public class ListViewFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
-        View listview = inflater.inflate(R.layout.newslist,null);
+        view = inflater.inflate(R.layout.newslist,container,false);
 
-        lvNews =(ListView) listview.findViewById(R.id.lvNews);
-        newsAdapter = new NewsAdapter(context,newsList);
-        lvNews.setAdapter(newsAdapter);
+        initViews();
 
-//        HttpUtils.getNewsJSON(GET_NEWS_URL,getNewsHander);
+//        lvNews =(ListView) view.findViewById(R.id.lvNews);
+//        newsAdapter = new NewsAdapter1(getActivity(),newsList);
+//        lvNews.setAdapter(newsAdapter);
+//
+//        class NewsAdapter1 extends NewsAdapter {
+//            public NewsAdapter1(Context context, List<News> lt) {
+//                super(context, lt);
+//            }
 
-        return listview;
+
+
+        return view;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle saveInstanceState){
-        super.onActivityCreated(saveInstanceState);
+    public void initViews() {
+
+        lvNews = (ListView) view.findViewById(R.id.lvNews);
+        lvNews.setAdapter(new NewsAdapter1(getActivity(), newsList));
+        HttpUtils.getNewsJSON(GET_NEWS_URL,getNewsHander);
+    }
+
+    class NewsAdapter1 extends NewsAdapter {
+        public NewsAdapter1(Context context, List<News> lt) {
+            super(context, lt);
+        }
+    }
+
+//    @Override
+//    public void onActivityCreated(@Nullable Bundle saveInstanceState){
+//        super.onActivityCreated(saveInstanceState);
 
 //        //这里建一个List用来存放News新闻类
 //        final List list = new ArrayList<>();
@@ -86,18 +104,9 @@ public class ListViewFragment extends Fragment{
 //        Bundle bundle = getArguments();
 
 //        lvNews =(ListView) getActivity().findViewById(R.id.lvNews);
-//
-////        lvNews.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View v) {
-////                System.out.println("getListView");
-////                Toast.makeText(getActivity(),"getListView",Toast.LENGTH_LONG).show();
-////            }
-////        });
-//
 //        newsAdapter = new NewsAdapter(context,newsList);
 //        lvNews.setAdapter(newsAdapter);
 //
 //        HttpUtils.getNewsJSON(GET_NEWS_URL,getNewsHander);
-    }
+//    }
 }

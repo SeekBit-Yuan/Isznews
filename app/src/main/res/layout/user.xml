@@ -1,20 +1,186 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background1"
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/test2"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:id="@+id/user_1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="测试2"/>
+        android:layout_weight="1"
+        android:background="@color/theme"
+        android:gravity="center"
+        android:orientation="horizontal">
 
+        <!--<RadioButton-->
+        <!--android:id="@+id/user_login"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:button="@null"-->
+        <!--android:checked="true"-->
+        <!--android:drawableTop="@drawable/user_selector_login"-->
+        <!--android:gravity="center|bottom"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:paddingTop="@dimen/user_login_top"-->
+        <!--android:paddingBottom="@dimen/user_login_button"-->
+        <!--android:text="@string/user_login"-->
+        <!--android:textColor="@color/background1"-->
+        <!--android:textSize="@dimen/user_login_size"/>-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/imageView_userlogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_login" />
+
+            <TextView
+                android:id="@+id/text_usernews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|bottom"
+                android:layout_marginTop="@dimen/user_login_margin"
+                android:text="@string/user_login"
+                android:textColor="@color/background1"
+                android:textSize="@dimen/user_login_size"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user_2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="用户首页"
-        android:textSize="30dp" />
+        android:background="@color/background2"
+        android:layout_weight="8"
+        android:orientation="vertical">
 
-</RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/user_radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/background2"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/user_collection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:background="@color/background1"
+                    android:drawableTop="@drawable/user_selector_collection"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="@dimen/tab_menu_top"
+                    android:text="@string/user_collection"
+                    android:textColor="@drawable/user_selector_tv_color" />
+
+                <RadioButton
+                    android:id="@+id/user_nightmode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:background="@color/background1"
+                    android:drawableTop="@drawable/user_selector_nightmode"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="@dimen/tab_menu_top"
+                    android:layout_marginLeft="@dimen/user_radiobuttom_margin"
+                    android:text="@string/user_nightmode"
+                    android:textColor="@drawable/user_selector_tv_color" />
+
+                <RadioButton
+                    android:id="@+id/user_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:background="@color/background1"
+                    android:drawableTop="@drawable/user_selector_setting"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="@dimen/tab_menu_top"
+                    android:layout_marginLeft="@dimen/user_radiobuttom_margin"
+                    android:text="@string/user_setting"
+                    android:textColor="@drawable/user_selector_tv_color" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mycomment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background1"
+            android:layout_marginTop="@dimen/user_mycomment_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="@string/user_mycomment"
+                android:textSize="@dimen/user_mycollection_size" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_go" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background1"
+            android:layout_marginTop="@dimen/user_feedback_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="@string/user_feedback"
+                android:textSize="@dimen/user_feedback_size" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_go" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_blank"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background1"
+            android:layout_marginTop="@dimen/user_blank_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

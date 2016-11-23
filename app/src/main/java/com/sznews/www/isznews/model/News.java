@@ -11,9 +11,9 @@ public class News {
     private String content_url;
     private String pic_url;
 
-    public News(String title,String desc,String time,String content_url,String pic_url){
+    public News(String title,String time,String content_url,String pic_url){
         setTitle(title);
-        setDesc(desc);
+//        setDesc(desc);
         setTime(time);
         setContent_url(content_url);
         setPic_url(pic_url);
