@@ -31,7 +31,7 @@ public class ListViewFragment extends Fragment{
     private NewsAdapter newsAdapter;
     private List<News> newsList = new ArrayList<News>();
 
-    public static final String GET_NEWS_URL = "http://172.30.66.60/NewsDemo/getNewsJSON.php";
+    public static final String GET_NEWS_URL = "http://172.16.138.247/NewsDemo/getNewsJSON.php";
 
     private Handler getNewsHander = new Handler(){
         public void handleMessage(android.os.Message msg){

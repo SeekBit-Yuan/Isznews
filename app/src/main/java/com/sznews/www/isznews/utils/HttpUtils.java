@@ -1,14 +1,15 @@
 package com.sznews.www.isznews.utils;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Message;
+import android.widget.ImageView;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.logging.Handler;
 
 /**
  * Created by sznews on 2016/11/21.
@@ -27,7 +28,7 @@ public class HttpUtils {
                     conn.setRequestMethod("GET");
                     is = conn.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-                    String line = " ";
+                    String line = "";
                     StringBuilder result = new StringBuilder();
                     while ((line = reader.readLine()) != null){
                         result.append(line);
@@ -36,7 +37,7 @@ public class HttpUtils {
                     msg.obj = result.toString();
                     handler.sendMessage(msg);
 
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
@@ -44,4 +45,21 @@ public class HttpUtils {
         }).start();
     }
 
+    public static void setPicBitmap(final ImageView ivPic, final String pic_url){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    HttpURLConnection conn = (HttpURLConnection) new URL(pic_url).openConnection();
+                    conn.connect();
+                    InputStream is = conn.getInputStream();
+                    Bitmap bitmap = BitmapFactory.decodeStream(is);
+                    ivPic.setImageBitmap(bitmap);
+                    is.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
 }
