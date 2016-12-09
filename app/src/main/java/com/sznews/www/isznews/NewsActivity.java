@@ -38,6 +38,8 @@ public class NewsActivity extends Activity {
         webView.loadUrl(pic_url);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        webView.getSettings().setSupportZoom(true);//是否支持缩放
+        webView.getSettings().setUseWideViewPort(true);//webview网页自适应手机屏幕大小,设置webview推荐使用的窗口
 
         webView.setWebViewClient(new WebViewClient(){
             @Override

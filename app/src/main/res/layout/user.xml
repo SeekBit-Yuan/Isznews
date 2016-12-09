@@ -15,20 +15,6 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <!--<RadioButton-->
-        <!--android:id="@+id/user_login"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:button="@null"-->
-        <!--android:checked="true"-->
-        <!--android:drawableTop="@drawable/user_selector_login"-->
-        <!--android:gravity="center|bottom"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:paddingTop="@dimen/user_login_top"-->
-        <!--android:paddingBottom="@dimen/user_login_button"-->
-        <!--android:text="@string/user_login"-->
-        <!--android:textColor="@color/background1"-->
-        <!--android:textSize="@dimen/user_login_size"/>-->
         <LinearLayout
             android:id="@+id/user_login"
             android:layout_width="wrap_content"

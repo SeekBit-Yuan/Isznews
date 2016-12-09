@@ -1,6 +1,5 @@
 package com.sznews.www.isznews.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,10 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 import com.sznews.www.isznews.LoginActivity;
 import com.sznews.www.isznews.R;
@@ -77,13 +74,13 @@ public class UserFragment extends Fragment{
             }
         });
 
-        feedback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+//        feedback.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), LoginActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         collection.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,46 +107,4 @@ public class UserFragment extends Fragment{
         });
     }
 
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.user_login:
-//            {
-//                Intent intent = new Intent(getActivity(), LoginActivity.class);
-//                startActivity(intent);
-//            }
-//            break;
-//            case R.id.user_collection:
-//            {
-//                Intent intent = new Intent(getActivity(), LoginActivity.class);
-//                startActivity(intent);
-//            }
-//            break;
-//            case R.id.user_nightmode:
-//            {
-//                Intent intent = new Intent(getActivity(), LoginActivity.class);
-//                startActivity(intent);
-//            }
-//            break;
-//            case R.id.user_setting:
-//            {
-//                Intent intent = new Intent(getActivity(), LoginActivity.class);
-//                startActivity(intent);
-//            }
-//            break;
-//            case R.id.user_mycomment:
-//            {
-//                Intent intent = new Intent(getActivity(), LoginActivity.class);
-//                startActivity(intent);
-//            }
-//            break;
-//            case R.id.user_feedback:
-//            {
-//                Intent intent = new Intent(getActivity(), LoginActivity.class);
-//                startActivity(intent);
-//            }
-//            break;
-//        }
-//
-//    }
 }

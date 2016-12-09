@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Yuan on 2016/11/14.
  */
 public class MyFragmentAdapter extends FragmentPagerAdapter{
-    private final int PAGE_COUNT = 3;
+    private final int PAGE_COUNT = 5;
     private final String[] titles;
     private Context context;
     private List<Fragment> fragments;
@@ -36,4 +36,6 @@ public class MyFragmentAdapter extends FragmentPagerAdapter{
     public CharSequence getPageTitle(int position) {
         return titles[position];
     }
+
+
 }

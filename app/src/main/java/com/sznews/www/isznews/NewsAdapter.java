@@ -2,7 +2,6 @@ package com.sznews.www.isznews;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,16 +66,17 @@ public class NewsAdapter extends BaseAdapter {
 
         TextView tvTitle = (TextView) view.findViewById(R.id.tvTitle);
         TextView tvDesc = (TextView) view.findViewById(R.id.tvDesc);
-        TextView tvTime = (TextView) view.findViewById(R.id.tvTime);
+//        TextView tvTime = (TextView) view.findViewById(R.id.tvTime);
         ImageView ivPic = (ImageView) view.findViewById(R.id.ivPic);
 
         News news = newsList.get(position);
         tvTitle.setText(news.getTitle());
         tvDesc.setText(news.getDesc());
-        tvTime.setText(news.getTime());
+//        tvTime.setText(news.getTime());
 
         String pic_url = news.getPic_url();
         HttpUtils.setPicBitmap(ivPic,pic_url);
+
         return view;
     }
 }

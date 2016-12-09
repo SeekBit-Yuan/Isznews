@@ -23,13 +23,11 @@ import java.util.List;
  */
 public class NewsFragment extends Fragment {
 
-    private String[] titles = new String[]{"推荐","南山","福田","龙岗","罗湖","盐田","大鹏","宝安"};
-
+    private String[] titles = new String[]{"推荐","福田","南山","龙岗","罗湖","盐田","大鹏","光明"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.news, null);
-
 
         return view;
     }
