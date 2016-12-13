@@ -24,7 +24,14 @@
     <dimen name="login_login_size">24dp</dimen>
     <dimen name="login_button">12dp</dimen>
     <dimen name="login_button_login">12dp</dimen>
-    <dimen name="login_forgetpassword_size">10dp</dimen>
+    <dimen name="login_forgetpassword_size">14dp</dimen>
     <dimen name="login_forgetpassword">16dp</dimen>
+    <dimen name="login_thirdpartylogins">16dp</dimen>
+    <dimen name="login_thirdpartyloginstop">20dp</dimen>
+    <dimen name="login_thirdpartyloginsleft">30dp</dimen>
+    <dimen name="login_thirdpartyloginsright">30dp</dimen>
+    <dimen name="login_thirdpartyloginsbuttom">50dp</dimen>
+
+    <dimen name="news_button">12dp</dimen>
 
 </resources>

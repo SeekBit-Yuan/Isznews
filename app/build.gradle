@@ -10,6 +10,10 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+        }
     }
     buildTypes {
         release {
@@ -26,4 +30,14 @@ dependencies {
     compile 'com.android.support:support-v4:24.0.0'
     compile 'com.android.support:design:24.0.0'
     compile 'com.google.code.gson:gson:2.8.0'
+    compile files('libs/MobTools-2016.0830.1940.jar')
+    compile files('libs/MobCommons-2016.0830.1940.jar')
+    compile files('libs/ShareSDK-Core-2.7.7.jar')
+    compile files('libs/ShareSDK-QQ-2.7.7.jar')
+    compile files('libs/ShareSDK-QZone-2.7.7.jar')
+    compile files('libs/ShareSDK-SinaWeibo-2.7.7.jar')
+    compile files('libs/ShareSDK-TencentWeibo-2.7.7.jar')
+    compile files('libs/ShareSDK-Wechat-2.7.7.jar')
+    compile files('libs/ShareSDK-Wechat-Core-2.7.7.jar')
+    compile files('libs/ShareSDK-Wechat-Moments-2.7.7.jar')
 }
