@@ -44,7 +44,7 @@ public class HttpUtils {
         }).start();
     }
 
-    public static void setPicBitmap(final ImageView ivPic, final String pic_url){
+    public static void setPicBitmap(final String pic_url,final android.os.Handler handler){
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -53,7 +53,11 @@ public class HttpUtils {
                     conn.connect();
                     InputStream is = conn.getInputStream();
                     Bitmap bitmap = BitmapFactory.decodeStream(is);
-                    ivPic.setImageBitmap(bitmap);
+                    Message message = new Message();
+                    message.obj = bitmap;
+                    handler.sendMessage(message);
+
+//                    ivPic.setImageBitmap(bitmap);
                     is.close();
                 } catch (Exception e) {
                     e.printStackTrace();
