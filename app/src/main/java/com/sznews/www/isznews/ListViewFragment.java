@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.sznews.www.isznews.model.News;
@@ -23,7 +24,7 @@ import java.util.List;
  * Created by sznews on 2016/11/22.
  */
 
-public class ListViewFragment extends Fragment{
+public class ListViewFragment extends Fragment implements AdapterView.OnItemClickListener{
 
     private View view;
 
@@ -77,6 +78,11 @@ public class ListViewFragment extends Fragment{
         newsAdapter = new NewsAdapter1(getActivity(), newsList);
         lvNews.setAdapter(newsAdapter);
 //        HttpUtils.getNewsJSON(GET_NEWS_URL,getNewsHander);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
     }
 
     class NewsAdapter1 extends NewsAdapter {
